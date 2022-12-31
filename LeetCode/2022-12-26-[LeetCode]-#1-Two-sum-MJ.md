@@ -126,10 +126,10 @@ class Solution(object):
 ```
 
 **결과 >> Accepted** 
+![results1](https://user-images.githubusercontent.com/101111603/210126396-1a10f230-dfb0-45d0-b42a-1d36989b90b4.jpg)
 
-![results1.JPG](#1%20Two%20sum%207b564c638b52449393f3bd76f9bc38d0/results1.jpg)
+![results2](https://user-images.githubusercontent.com/101111603/210126399-7e553887-04bb-4658-8eee-18667cc1383f.jpg)
 
-![results2.JPG](#1%20Two%20sum%207b564c638b52449393f3bd76f9bc38d0/results2.jpg)
 
 - 내가 푼 방식은 부르트포스 알고리즘이기 때문에 간단하지만 시간복잡도는 $O(n^2)$이다.
 
