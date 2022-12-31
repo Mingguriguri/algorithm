@@ -1,18 +1,8 @@
-# #1971. Find if Path Exists in Graph
+# [#1971. Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/)
 
-progress: Done
-review: 🥜
-site: LeetCode
-등급: Easy
-링크: https://leetcode.com/problems/find-if-path-exists-in-graph/
-복습: No
-유형: 백트래킹(DFS/BFS), 트리/그래프
-작성일시: 2022년 12월 23일 오후 12:35
-체크박스2: Yes
+`LeetCode` 의 `Easy`문제이다.
 
 # 📖Description
-
----
 
 There is a **bi-directional** graph with `n` vertices, where each vertex is labeled from `0` to `n - 1` (**inclusive**). The edges in the graph are represented as a 2D integer array `edges`, where each `edges[i] = [ui, vi]` denotes a bi-directional edge between vertex `ui` and vertex `vi`. Every vertex pair is connected by **at most one** edge, and no vertex has an edge to itself.
 
@@ -53,7 +43,6 @@ output: source부터 destination까지 갈 길이 있는지 t/f 반환
 
 # 🤔Intuition
 
----
 
 - 엣지의 개수로는 연관성이 없다
 - 노드가 있는지 확인
@@ -76,7 +65,6 @@ output: source부터 destination까지 갈 길이 있는지 t/f 반환
 
 # 🔍Approach
 
----
 
 1. bi-directional graph를 구현한다.
 2. 그래프 사이를 지나다니면서 
@@ -247,8 +235,6 @@ class Solution:
 ```
 
 # 💡Remembrance
-
----
 
 - 그래프에 대해 아무것도 몰랐으나, 이 문제를 스터디를 통해 고민하고 구현해보면서 그래프와 bi-directional graph에 대해 이해할 수 있었다.
 - bfs와 dfs를 각각은 알았지만 이를 그래프 탐색에 사용되는 방법으로써는 처음 사용해본 것 같다. 이론을 할 때는 십게 이해했지만 막상 그래프를 탐색할 때는 bfs와 dfs가 빠르게 떠오르지 않았다. 이렇게 새로 배워간다!
