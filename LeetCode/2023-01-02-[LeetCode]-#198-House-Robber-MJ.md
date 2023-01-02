@@ -1,14 +1,6 @@
-# #198. House Robber
+# [#198. House Robber](https://leetcode.com/problems/house-robber/)
 
-progress: Not started
-review: 🥜
-site: LeetCode
-upload: No
-등급: Medium
-링크: https://leetcode.com/problems/house-robber/
-알고리즘 개념: https://www.notion.so/DP-cb86236f695748e38b10b19d7eb5a68e
-유형: 동적프로그래밍
-작성일시: 2023년 1월 2일 오전 11:38
+`LeetCode`의 `Medium`등급 문제이다.
 
 # 📖Description
 
@@ -198,10 +190,9 @@ class Solution(object):
 3. `dp[1]`에는 `nums[0]`의 값을 넣어준다.
 4. dp에 1까지 찼으니까 index 2부터 시작한다.
 5. 직전에 있는 값과 `nums[i-1]`과 `dp[i-2]`를 더한 값 중 큰 값을 `dp`리스트에 저장한다. 인접한 인덱스에는 방문하지 못하는 조건이 있기 때문에 `dp[i-2]`로 설정한다.
+![%EC%97%AC%EB%9F%AC%EB%B2%88_%EC%8B%9C%EB%8F%84_%EB%81%9D%EC%97%90](https://user-images.githubusercontent.com/101111603/210200752-56adba58-506e-42c2-8a8e-fadf64bbc66f.jpg)
+![%EB%A6%AC%EC%A0%88%ED%8A%B8](https://user-images.githubusercontent.com/101111603/210200756-20fcf38b-f1b6-403e-9f29-a20d78a8dea8.jpg)
 
-![여러번 시도 끝에.JPG](#198%20House%20Robber%20ca9def1911c947e6ab5c25bfee250a52/%25EC%2597%25AC%25EB%259F%25AC%25EB%25B2%2588_%25EC%258B%259C%25EB%258F%2584_%25EB%2581%259D%25EC%2597%2590.jpg)
-
-![리절트.JPG](#198%20House%20Robber%20ca9def1911c947e6ab5c25bfee250a52/%25EB%25A6%25AC%25EC%25A0%2588%25ED%258A%25B8.jpg)
 
 여러번의 시도 끝에 성공한 흔적.. 
 
@@ -226,8 +217,7 @@ class Solution(object):
 
         return dp.pop()
 ```
-
-![리절트2.JPG](#198%20House%20Robber%20ca9def1911c947e6ab5c25bfee250a52/%25EB%25A6%25AC%25EC%25A0%2588%25ED%258A%25B82.jpg)
+![%EB%A6%AC%EC%A0%88%ED%8A%B82](https://user-images.githubusercontent.com/101111603/210200762-2f1286ea-645c-4be6-957a-19a7b7951790.jpg)
 
 - 첫번째 시도 때 index에 0을 주어야 해결된다고 생각했는데, 위 코드처럼 리스트의 길이를 +1 하지 않더라도 예외의 경우를 설정해주면 해결할 수 있다는 것을 알게 되었다.
 
