@@ -1,13 +1,6 @@
-# #11. Container with most water
+# [#11. Container with most water](https://leetcode.com/problems/container-with-most-water/description/)
 
-progress: In progress
-review: 🥜
-site: LeetCode
-upload: No
-등급: Medium
-링크: https://leetcode.com/problems/container-with-most-water/description/
-유형: 구현
-작성일시: 2023년 1월 4일 오전 10:05
+스터디에서 JB선배가 준비한 `LeetCode`의 `Medium`단계의 문제이다.
 
 # 📖Description
 
@@ -43,8 +36,8 @@ Output: 1
 **output : 최대 물의 양**
 
 - **최대 물의 양은 어떻게 구할까?**
+![6D362D1B-AE40-4054-882F-C77CCEFDF58A](https://user-images.githubusercontent.com/101111603/210477250-31d446f1-4cea-461a-ab5f-2346957e9db9.jpeg)
 
-![6D362D1B-AE40-4054-882F-C77CCEFDF58A.jpeg](#11%20Container%20with%20most%20water%2048054615393c4875a9e042a598e45c59/6D362D1B-AE40-4054-882F-C77CCEFDF58A.jpeg)
 
 - 이렇게 위의 그림과 같이 물의 총량은 선 사이의 거리 * 짧은 선 길이이다.
 
@@ -153,9 +146,8 @@ class Solution(object):
 
 • **Time complexity : $O(N)$**
 
-![result1.JPG](#11%20Container%20with%20most%20water%2048054615393c4875a9e042a598e45c59/result1.jpg)
-
-![results2.JPG](#11%20Container%20with%20most%20water%2048054615393c4875a9e042a598e45c59/results2.jpg)
+![result1](https://user-images.githubusercontent.com/101111603/210477276-0b11ede1-0437-479d-8d68-e0e0f0aa55ea.jpg)
+![results2](https://user-images.githubusercontent.com/101111603/210477282-fd30454c-7a94-45c3-a62c-db6929e22b19.jpg)
 
 내가 한 코드가 좀 뒤에 있는 이유가 변수를 추가적으로 만들어서 그런 것 같다.
 
