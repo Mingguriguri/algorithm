@@ -1,12 +1,5 @@
-# #10. Array Partition
-
-progress: Not started
-site: LeetCode
-upload: No
-등급: Easy
-유형: 배열, 투 포인터/슬라이딩 윈도우
-작성일시: 2023년 1월 8일 오후 9:12
-
+# [#561. Array Partition](https://leetcode.com/problems/array-partition/)
+`LeetCode` - Easy
 # 📖Problems
 
 Given an integer array `nums` of `2n` integers, group these integers into `n` pairs `(a1, b1), (a2, b2), ..., (an, bn)` such that the sum of `min(ai, bi)` for all `i` is **maximized**. Return *the maximized sum*.
@@ -94,8 +87,8 @@ class Solution(object):
 
         return sum
 ```
+![561_solve](https://user-images.githubusercontent.com/101111603/211200432-ea70c7ad-b1c4-4bd6-98e7-695717d17238.jpg)
 
-![561 solve.JPG](#10%20Array%20Partition%208cb9fa3cac344bd0b982a85329443d8e/561_solve.jpg)
 
 ## 🚩Others submission
 
@@ -114,14 +107,14 @@ class Solution(object):
                 sum += n
         return sum
 ```
+![solve2](https://user-images.githubusercontent.com/101111603/211200411-5de172a3-8761-4f68-9080-bef359b2e546.jpg)
 
-![solve2.JPG](#10%20Array%20Partition%208cb9fa3cac344bd0b982a85329443d8e/solve2.jpg)
 
 - 아이디어를 생각해내면 훨씬 더 단순해지는 것 같다.
 - 문제에서 `min()`을 쓰라는 느낌을 받아서 이 방식은 생각 못했을 것 같다.
 - 코드는 간결하고 보기 쉽다. 하지만 런타임 자체는 위와 비슷하다.
 
-1. **슬라이싱을 이용한 파이썬다운 방식**
+2. **슬라이싱을 이용한 파이썬다운 방식**
 
 슬라이싱을 활용하면 단 한 줄로 풀이할 수 있다. ***(Pythonic Way)***
 
@@ -130,8 +123,8 @@ class Solution(object):
     def arrayPairSum(self, nums):
         return sum(sorted(nums)[::2])
 ```
+![solve3](https://user-images.githubusercontent.com/101111603/211200442-e2c6e0fc-2c2f-4b9f-b695-bbf3e8826449.jpg)
 
-![solve3.JPG](#10%20Array%20Partition%208cb9fa3cac344bd0b982a85329443d8e/solve3.jpg)
 
 - 이전 1번처럼 결국엔 짝수값을 더하는 것이기 때문에 슬라이싱을 통해 2씩 더하면 끝난다.
 
