@@ -1,15 +1,5 @@
-# 150. Evaluate Reverse Polish Notation
-
-progress: Done
-review: 🥜
-site: LeetCode
-upload: No
-등급: Medium
-링크: https://leetcode.com/problems/evaluate-reverse-polish-notation/
-유형: 스택/큐
-작성일시: 2023년 1월 11일 오후 12:03
-
-# **[150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)**
+# **[150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)**
+LeetCode - Medium
 
 # 📖Problems
 
