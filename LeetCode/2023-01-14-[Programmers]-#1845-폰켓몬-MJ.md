@@ -1,15 +1,5 @@
-# #1845. 폰켓몬
-
-progress: In progress
-review: 🥜
-site: 프로그래머스
-upload: No
-등급: Level1
-링크: https://school.programmers.co.kr/learn/courses/30/lessons/1845
-유형: 브루트 포스(완전탐색), 해시 테이블
-작성일시: 2023년 1월 15일 오전 2:22
-
-# #1845. 폰켓몬
+# [#1845. 폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845)
+프로그래머스 - 고득점 kit - 해시 - Level1
 
 # 📖Problems
 
@@ -71,8 +61,8 @@ def solution(nums):
     answer = min(mine, len(my_list))
     return answer
 ```
+![%ED%8F%B0%EC%BC%93%EB%AA%AC_%EA%B2%B0%EA%B3%BC](https://user-images.githubusercontent.com/101111603/212504521-bc4e81f5-8185-43da-b90c-cb035e4ab2c0.jpg)
 
-![폰켓몬 결과.JPG](#1845%20%E1%84%91%E1%85%A9%E1%86%AB%E1%84%8F%E1%85%A6%E1%86%BA%E1%84%86%E1%85%A9%E1%86%AB%201e3dab97ba684f9dbd3b1c5beeb73bd8/%25ED%258F%25B0%25EC%25BC%2593%25EB%25AA%25AC_%25EA%25B2%25B0%25EA%25B3%25BC.jpg)
 
 ## 🚩Others submission
 
