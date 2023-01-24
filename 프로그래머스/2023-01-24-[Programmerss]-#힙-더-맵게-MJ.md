@@ -1,15 +1,3 @@
-# 힙 - 더 맵게
-
-progress: Done
-review: 🥜
-site: 프로그래머스
-upload: Yes
-등급: Level2
-링크: https://school.programmers.co.kr/learn/courses/30/lessons/42626
-알고리즘 개념: https://www.notion.so/Heap-0534d479740040a195d844181b898108
-유형: 힙
-작성일시: 2023년 1월 24일 오전 11:04
-
 # [프로그래머스 - 코딩테스트 연습 - 고득점 kit - 힙 - #.더 맵게](https://school.programmers.co.kr/learn/courses/30/lessons/42626)
 
 # 📖Problems
