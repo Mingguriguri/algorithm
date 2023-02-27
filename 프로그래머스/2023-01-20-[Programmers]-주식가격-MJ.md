@@ -41,11 +41,11 @@
 5. for문을 다 돌면서 `stack`에 채워넣었다면, 다시 for문을 새로 돌면서 stack에 있는 요소들을 pop한 후 `answer`에 채워넣는다.
     1. 스택의 길이와 같이 저장한 인덱스간의 차이가 곧 시간이므로, `answer[stack[-1][0]] = len(stack)-stack.pop()[0]`
     
-    ```python
+```python
     def solution(prices):
         stack = []
         answer = [0] * len(prices)
-        
+
         for idx, nums in enumerate(prices):
             if not stack:
                 stack.append([idx, nums])
@@ -61,9 +61,9 @@
             last = stack.pop()[0] 
             answer[last] = stack_length - last
             # answer[stack[-1][0]] = stack_length - stack.pop()[0]
-        
+
         return answer
-    ```
+```
   
   
 ![%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-01-19_21-55-21](https://user-images.githubusercontent.com/101111603/221585466-9f4833bc-4aa3-4b2c-bcc1-ecdb12b6b053.png)
@@ -79,24 +79,23 @@
     
     
  ```python
-    def solution(prices):
-        
-        answer = [0] * len(prices)
-        stack = []
-        
-        for idx, p in enumerate(prices):
-            while stack and (p < prices[stack[-1]] or idx == len(prices)-1):
-                last = stack.pop()
-                answer[last] = idx - last
-            stack.append(idx)
-        
-        
-        return answer
-    ```
+def solution(prices):
+
+    answer = [0] * len(prices)
+    stack = []
+
+    for idx, p in enumerate(prices):
+        while stack and (p < prices[stack[-1]] or idx == len(prices)-1):
+            last = stack.pop()
+            answer[last] = idx - last
+        stack.append(idx)
+
+
+    return answer
+```
     
-    Time coplexity: O(n)
-    
-    **Space complexity: O(n) + O(n) = O(2n) = O(n)**
+**Time coplexity: O(n)**  
+**Space complexity: O(n) + O(n) = O(2n) = O(n)**
     
 
 ## 🚩Others submission
