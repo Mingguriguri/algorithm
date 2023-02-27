@@ -75,11 +75,10 @@
   
   
     
-    **풀이 보완**
+**풀이 보완**
     
-    참고한 사이트 : 
     
-    ```python
+ ```python
     def solution(prices):
         
         answer = [0] * len(prices)
@@ -117,8 +116,8 @@ def solution(prices):
     return answer
 ```
 
-Time coplexity: O(n)
 
+**Time coplexity: O(n)**
 **Space complexity: O(n) + O(n) = O(2n) = O(n)**
 
 1. queue
