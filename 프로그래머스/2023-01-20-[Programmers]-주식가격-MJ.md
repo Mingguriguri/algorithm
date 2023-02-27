@@ -64,12 +64,16 @@
         
         return answer
     ```
-    ![%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-01-19_21-55-21](https://user-images.githubusercontent.com/101111603/221585466-9f4833bc-4aa3-4b2c-bcc1-ecdb12b6b053.png)
+  
+  
+![%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-01-19_21-55-21](https://user-images.githubusercontent.com/101111603/221585466-9f4833bc-4aa3-4b2c-bcc1-ecdb12b6b053.png)
 
 ![%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-01-19_21-56-02](https://user-images.githubusercontent.com/101111603/221585502-2dbb0604-8374-4cdb-b202-73fac9272f72.png)
 
     
-    테스트케이스는 잘 작동하는데, 제출하면 완전히 틀려버린다. 이유가 도대체 뭐지..!?!
+  테스트케이스는 잘 작동하는데, 제출하면 완전히 틀려버린다. 이유가 도대체 뭐지..!?!
+  
+  
     
     **풀이 보완**
     
