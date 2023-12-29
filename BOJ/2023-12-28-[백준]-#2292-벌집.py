@@ -7,5 +7,4 @@ while (n-substract) > 0:
     substract = cnt * 6
     cnt += 1
 
-cnt += 1
 print(cnt)
