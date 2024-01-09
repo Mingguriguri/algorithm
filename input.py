@@ -5,6 +5,7 @@ a, b = map(float, input().split()) #실수형으로
 
 #2. 1차원 배열 입력받기 = 정수형 리스트로 저장
 num_list = list(map(int, input().split())) #입력 : 1 2 3 /출력 : [1, 2, 3] 
+num_list = [int(x) for x in input().split()]
 
 #3. 문자열 여러줄 입력받기 
 s_list = [input() for _ in range(n)] #예시로 n에 3넣어 3줄 입력받기(엔터로 구분)
