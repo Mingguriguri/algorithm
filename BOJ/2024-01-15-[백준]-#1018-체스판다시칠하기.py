@@ -1,20 +1,30 @@
-# 입력
-n, m = map(int, input().split())
-chess = [input() for _ in range(n)]
-count = 0
-color = 'B'
-print(chess)
+N,M = map(int, input().split())
 
-'''
-아예 로직이 떠오르지 않아.........
-한 줄씩 보면서 W 다음에는 B, B다음에는 W가 나오는지 확인한다.
-이때 연속으로 같은 수가 나오면
-M-8, N-8
-'''
-for i in range(n):
-    for j in range(m):
-        if chess[i][j] == color:
-            color = 'W'
-        
-# 출력
-print(count)
+board = []
+result = []
+ 
+for _ in range(N):
+    board.append(input())
+ 
+for i in range(N-7):
+    for j in range(M-7):
+        is_it_black = 0
+        is_it_white = 0
+ 
+        for a in range(i, i+8):
+            for b in range(j, j+8):
+                if (a + b) % 2 == 0:
+                    if board[a][b] != 'B':
+                        is_it_black += 1
+                    if board[a][b] != 'W':
+                        is_it_white += 1
+                else:
+                    if board[a][b] != 'W':
+                        is_it_black += 1
+                    if board[a][b] != 'B':
+                        is_it_white += 1
+ 
+        result.append(is_it_black)
+        result.append(is_it_white)
+ 
+print(min(result))
