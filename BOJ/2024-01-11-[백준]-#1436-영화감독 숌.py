@@ -2,6 +2,7 @@
 n = int(input())
 answer = 666
 cnt = 0
+
 # 로직
 '''
 '666'이 answer에 있을 때마다 카운트(cnt)
@@ -15,7 +16,5 @@ while n != cnt:
             break
 
     answer += 1
-
-
 # 출력
 print(answer)
