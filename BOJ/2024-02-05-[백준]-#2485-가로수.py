@@ -25,7 +25,7 @@ print(distance)
 resultGCD = ArrGCD(distance)
 print("resultGCD", resultGCD)
 
-# GCD 만큼 돌면서 해당 나무가 없으면 심기. 즉 카운트하기
+# distance거리만큼 반복하면서 해당 나무가 없으면 심기. 즉 카운트하기
 # 이때 거리값에 GCD값을 제외하고 제외한 값에 GCD로 나누었을 때의 몫 값을 이용
 for i in range(len(distance)):
     cnt += (distance[i]-resultGCD) // resultGCD
