@@ -1,4 +1,4 @@
-import sys2
+import sys
 input = sys.stdin.readline
 
 def factorical(answer, N):
