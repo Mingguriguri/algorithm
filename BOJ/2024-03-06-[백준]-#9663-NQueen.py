@@ -16,7 +16,7 @@ def isPromissing(board, new):
 def nQueen(new, board):
     global n
     global count
-    print(board)
+    #print(board)
     # n 이 마지막행까지 수행하고 여기까지 오면 찾기 완료!
     if new == n:
         count += 1
