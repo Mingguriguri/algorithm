@@ -26,5 +26,5 @@ for p in prefix_sums:
         mod_count[mod] += 1 # 해당 나머지 값의 빈도수 +1
     else:
         mod_count[mod] = 1 # 새로운 나머지 값 추가
-        
+
 print(count)
