@@ -3,7 +3,7 @@ import heapq
 
 input = sys.stdin.readline
 
-# 입력 받기
+# Step 1: 입력 받기
 N, K = map(int, input().split())  # N: 보석 개수, K: 가방 개수
 jewelry = []  # (무게, 가격)
 bags = []  # 가방의 최대 무게
@@ -15,13 +15,11 @@ for _ in range(N):
 for _ in range(K):
     bags.append(int(input()))
 
-# 보석을 무게 기준으로 정렬 (무게가 작은 순)
-jewelry.sort()
+# Step 2: 보석과 가방 정렬
+jewelry.sort()  # 보석을 무게 기준으로 정렬
+bags.sort()  # 가방을 무게 기준으로 정렬
 
-# 가방을 무게 기준으로 정렬 (무게가 작은 순)
-bags.sort()
-
-# 우선순위 큐 (최대 힙)
+# Step 3: 우선순위 큐 (최대 힙) 사용
 max_heap = []
 result = 0
 idx = 0
@@ -38,3 +36,4 @@ for bag in bags:
         result += -heapq.heappop(max_heap)
 
 print(result)
+
