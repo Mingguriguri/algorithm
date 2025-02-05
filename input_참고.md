@@ -1,3 +1,6 @@
+## 파이썬 왕초보 입력시 참고하면 좋을 내용
+왕초보라 올리는 겁니다!
+```python
 #1. 값 두 개를 입력받아 변수 a와 b에 저장 (띄어쓰기 구분)
 a, b = input().split() #문자열로
 a, b = map(int, input().split()) #정수형으로
@@ -20,3 +23,4 @@ two_d = [list(map(int, input())) for _ in range(n)] #예시는 4줄 입력받음
 
 #6. 열은 띄어쓰기로 행은 엔터로 구분하여 입력받아 2차원 배열 저장하기
 t_d = [list(map(int, input().split())) for _ in range(n)]#예시는 4줄. 4.-와 결과는 같다.
+```
