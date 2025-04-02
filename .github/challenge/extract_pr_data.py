@@ -17,6 +17,7 @@ def main():
 
     pr_body = event_data['pull_request']['body']
     pr_number = event_data['pull_request']['number']
+    username = event_data['pull_request']['user']['login']
     print(f"pr_body: {pr_body}, pr_number: {pr_number}")
 
     if pr_number is None:
@@ -52,6 +53,7 @@ def main():
                     # 문제 번호를 정수로 변환
                     entry['problem_id'] = int(entry.pop("id"))
                     entry['pr_number'] = pr_number
+                    entry['username'] = username
                     # 공백 제거
                     entry['algorithm'] = entry['algorithm'].strip()
                     entry['difficulty'] = entry['difficulty'].strip()
