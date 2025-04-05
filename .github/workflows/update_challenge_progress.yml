@@ -22,35 +22,29 @@ jobs:
       - name: Run update_scoreboard.py
         run: python update_scoreboard.py
 
+      - name: Run update_dashboard.py
+        run: python update_dashboard.py
+
       - name: Commit updated scoreboard.json
         run: |
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
-          git add ../challenge/scoreboard.json
-          git commit -m "Update challenge scoreboard" || echo "No changes to commit"
+          cd ../challenge
+          git add scoreboard.json DASHBOARD.md HISTORY.md
+          git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
           git push
 
       - name: Post PR Comment with progress
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
-            const scoreboard = JSON.parse(fs.readFileSync('scoreboard.json', 'utf8'));
+            const dashboard = fs.readFileSync('DASHBOARD.md', 'utf8');
             const prNumber = context.payload.pull_request.number;
-            let commentBody = "### Challenge Progress Update\n\n";
-            for (const user in scoreboard) {
-              commentBody += `**${user}**:\n`;
-              for (const type in scoreboard[user]) {
-                if (type === "achieved") continue;
-                const count = scoreboard[user][type].length;
-                const achieved = scoreboard[user]["achieved"][type] ? "✅" : "❌";
-                commentBody += `- **${type}**: ${count} 문제 (${achieved})\n`;
-              }
-              commentBody += "\n";
-            }
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: commentBody
+              body: dashboard
             });
