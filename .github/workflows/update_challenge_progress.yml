@@ -16,16 +16,16 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Change Directory
-        run: cd .github/challenge
-
       - name: Run extract_pr_data.py
+        working-directory: .github/challenge
         run: python extract_pr_data.py
 
       - name: Run update_scoreboard.py
+        working-directory: .github/challenge
         run: python update_scoreboard.py
 
       - name: Run update_dashboard.py
+        working-directory: .github/challenge
         run: python update_dashboard.py
 
       - name: Commit updated scoreboard.json
