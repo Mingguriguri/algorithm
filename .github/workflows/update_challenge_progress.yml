@@ -47,7 +47,7 @@ jobs:
           script: |
             const fs = require('fs');
             // DASHBOARD.md 파일에서 내용 읽어오기 (working-directory에 따라 경로 조정)
-            const dashboard = fs.readFileSync('DASHBOARD.md', 'utf8');
+            const dashboard = fs.readFileSync('.github/challenge/DASHBOARD.md', 'utf8');
             // PR 이벤트에서 PR 번호 가져오기
             const prNumber = context.payload.pull_request.number;
             // GitHub REST API를 통해 코멘트 생성
