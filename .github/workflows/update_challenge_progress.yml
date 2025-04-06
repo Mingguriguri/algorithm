@@ -16,6 +16,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Change Directory
+        run: cd .github/challenge
+
       - name: Run extract_pr_data.py
         run: python extract_pr_data.py
 
@@ -29,7 +32,6 @@ jobs:
         run: |
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
-          cd ../challenge
           git add scoreboard.json DASHBOARD.md HISTORY.md
           git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
           git push
