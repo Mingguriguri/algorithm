@@ -2,14 +2,17 @@ name: Update Challenge Progress
 
 on:
   pull_request:
-    types: [opened, edited, reopened]
+    types: [closed]
 
 jobs:
   update_progress:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -17,34 +20,27 @@ jobs:
           python-version: '3.x'
 
       - name: Run extract_pr_data.py
+        working-directory: .github/challenge
         run: python extract_pr_data.py
 
       - name: Run update_scoreboard.py
+        working-directory: .github/challenge
         run: python update_scoreboard.py
 
       - name: Run update_dashboard.py
+        working-directory: .github/challenge
         run: python update_dashboard.py
 
-      - name: Commit updated scoreboard.json
+      - name: Checkout main branch
+        run: |
+          git fetch origin main
+          git checkout main
+
+      - name: Commit updated files
+        working-directory: .github/challenge
         run: |
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
-          cd ../challenge
           git add scoreboard.json DASHBOARD.md HISTORY.md
           git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
-          git push
-
-      - name: Post PR Comment with progress
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require('fs');
-            const dashboard = fs.readFileSync('DASHBOARD.md', 'utf8');
-            const prNumber = context.payload.pull_request.number;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              body: dashboard
-            });
+          git push origin main
