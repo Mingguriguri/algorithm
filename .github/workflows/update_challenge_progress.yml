@@ -29,6 +29,7 @@ jobs:
         run: python update_dashboard.py
 
       - name: Commit updated scoreboard.json
+        working-directory: .github/challenge
         run: |
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
