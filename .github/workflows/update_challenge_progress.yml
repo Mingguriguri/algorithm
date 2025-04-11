@@ -1,8 +1,9 @@
 name: Update Challenge Progress
 
 on:
-  pushes:
-    - main
+  push:
+    branches:
+      - main
 
 jobs:
   update_progress:
