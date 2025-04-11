@@ -1,12 +1,13 @@
 name: Update Challenge Progress
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - closed
 
 jobs:
   update_progress:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
