@@ -45,3 +45,24 @@ jobs:
           git add scoreboard.json DASHBOARD.md HISTORY.md
           git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
           git push origin main
+
+  notify_discord:
+    needs: update_progress
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Send Dashboard to Discord
+        working-directory: .github/challenge
+        run: |
+          # cd _MonthlyChallenges
+          DASHBOARD_CONTENT=$(cat DASHBOARD.md)
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"${DASHBOARD_CONTENT}\"}" \
+               "${{ secrets.DISCORD_WEBHOOK_URL }}"
+    
