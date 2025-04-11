@@ -60,9 +60,10 @@ jobs:
         working-directory: .github/challenge
         run: |
           # cd _MonthlyChallenges
-          DASHBOARD_CONTENT=$(cat DASHBOARD.md)
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d "{\"content\": \"${DASHBOARD_CONTENT}\"}" \
-               "${{ secrets.DISCORD_WEBHOOK_URL }}"
+          DASHBOARD_CONTENT=$(jq -R -s '.' DASHBOARD.md)
+          echo "Dashboard content: $DASHBOARD_CONTENT"
+          curl -v -H "Content-Type: application/json" \
+              -X POST \
+              -d "{\"content\": ${DASHBOARD_CONTENT}}" \
+              "${{ secrets.DISCORD_WEBHOOK_URL }}"
     
