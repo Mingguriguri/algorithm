@@ -5,6 +5,6 @@
 
 
 ### 👉 DP
-- **Mingguriguri**: 10개 ✅
+- **Mingguriguri**: 14개 ✅
 
 
