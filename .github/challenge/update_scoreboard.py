@@ -84,20 +84,20 @@ def main():
         if problem_id not in users[username].get(algorithm, []):
             users[username][algorithm].append(problem_id)
 
-    print(f"users: {users}")
+        print(f"users: {users}")
 
-    # 6. 각 사용자별로 달성 여부 업데이트
-    for username, data in users.items():
-        for ctype, goal in CHALLENGE_TYPES.items():
-            count = len(data.get(ctype, []))
-            # 목표 수 이상이면 달성 처리
-            data["achieved"][ctype] = (count >= goal)
+        # 6. 각 사용자별로 달성 여부 업데이트
+        for username, data in users.items():
+            for ctype, goal in CHALLENGE_TYPES.items():
+                count = len(data.get(ctype, []))
+                # 목표 수 이상이면 달성 처리
+                data["achieved"][ctype] = (count >= goal)
 
-    # 7. 스코어보드 저장
-    with open(SCOREBOARD_FILE, 'w', encoding='utf-8') as f:
-        json.dump(scoreboard, f, ensure_ascii=False, indent=2)
+        # 7. 스코어보드 저장
+        with open(SCOREBOARD_FILE, 'w', encoding='utf-8') as f:
+            json.dump(scoreboard, f, ensure_ascii=False, indent=2)
 
-    print("scoreboard.json 업데이트 완료!")
+        print("scoreboard.json 업데이트 완료!")
 
 if __name__ == '__main__':
     main()
