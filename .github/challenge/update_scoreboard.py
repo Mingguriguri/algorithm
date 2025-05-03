@@ -77,25 +77,26 @@ def main():
 
         # 해당 사용자가 없으면 초기화
         if username not in users:
+            print("사용자가 없다면 초기화")
             users[username] = initialize_user()
+            print(f"초기화 후: {users}")
 
         # 해당 문제 ID 중복 없이 추가
         print("해당 문제 ID 중복 없이 추가")
         if problem_id not in users[username].get(algorithm, []):
             users[username][algorithm].append(problem_id)
 
-        print(f"users: {users}")
+    print(f"각 사용자별로 달성 여부 업데이트 users: {users}")
+    # 6. 각 사용자별로 달성 여부 업데이트
+    for username, data in users.items():
+        for ctype, goal in CHALLENGE_TYPES.items():
+            count = len(data.get(ctype, []))
+            # 목표 수 이상이면 달성 처리
+            data["achieved"][ctype] = (count >= goal)
 
-        # 6. 각 사용자별로 달성 여부 업데이트
-        for username, data in users.items():
-            for ctype, goal in CHALLENGE_TYPES.items():
-                count = len(data.get(ctype, []))
-                # 목표 수 이상이면 달성 처리
-                data["achieved"][ctype] = (count >= goal)
-
-        # 7. 스코어보드 저장
-        with open(SCOREBOARD_FILE, 'w', encoding='utf-8') as f:
-            json.dump(scoreboard, f, ensure_ascii=False, indent=2)
+    # 7. 스코어보드 저장
+    with open(SCOREBOARD_FILE, 'w', encoding='utf-8') as f:
+        json.dump(scoreboard, f, ensure_ascii=False, indent=2)
 
         print("scoreboard.json 업데이트 완료!")
 
