@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 
-from codingtest_algorithm_study._MonthlyChallenges.update_dashboard import archive_current_month
+from update_dashboard import archive_current_month
 
 SCOREBOARD_FILE = "scoreboard.json"
 PR_DATA_FILE = "pr_data.json"
